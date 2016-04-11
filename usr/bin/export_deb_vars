@@ -1,0 +1,19 @@
+#! /bin/sh
+export DIRECTORY=$(cd `dirname $0` && pwd)
+cd $DIRECTORY
+export SOURCEBINPATH="$DIRECTORY"
+SOURCEBIN=$(find usr/bin -type f -name "*")
+export SOURCEBIN
+export SOURCEDOC=$(find . -name README.md)
+DEBFOLDER=""
+for folder in $(echo $SOURCEBINPATH | tr "/" " "); do
+	DEBFOLDER="$folder"
+	export DEBFOLDER
+done
+export DEBVERSION=$(date +%Y%m%d)
+echo "$SOURCEBINPATH
+$SOURCEBIN
+$SOURCEDOC
+$DEBFOLDER
+$DEBVERSION
+"
