@@ -24,6 +24,9 @@ or this if you use bash
         #! /bin/sh
         source export_deb_vars
 
+To see an example of this script in action, see the debian.sh script in
+this directory.
+
 ### Variables Exported by the Script
 
 **will be added in later**

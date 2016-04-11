@@ -1,5 +1,5 @@
 #! /bin/sh
-. /usr/local/bin/export_deb_vars
+. export_deb_vars
 pwd
 dh_make --indep --createorig -p "$DEBFOLDERNAME"
 ls
