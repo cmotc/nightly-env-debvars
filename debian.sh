@@ -1,5 +1,11 @@
 #! /bin/sh
-. export_deb_vars
+if [ -f /usr/bin/export_deb_vars ]; then
+	. export_deb_vars
+elif [ -f usr/bin/export_deb_vars ]; then
+	. usr/bin/export_deb_vars
+else
+	exit 0
+fi
 pwd
 dh_make --indep --createorig -p "$DEBFOLDERNAME"
 ls

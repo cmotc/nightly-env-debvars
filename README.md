@@ -25,7 +25,8 @@ or this if you use bash
         source export_deb_vars
 
 To see an example of this script in action, see the debian.sh script in
-this directory.
+this directory. It will source itself from within the repository if the
+script isn't already in your PATH.
 
 ### Variables Exported by the Script
 
