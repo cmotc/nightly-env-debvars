@@ -11,9 +11,11 @@ for folder in $(echo $SOURCEBINPATH | tr "/" " "); do
 	export DEBFOLDER
 done
 export DEBVERSION=$(date +%Y%m%d)
-echo "$SOURCEBINPATH
+echo -n "$SOURCEBINPATH
 $SOURCEBIN
 $SOURCEDOC
 $DEBFOLDER
-$DEBVERSION
-"
+$DEBVERSION"
+export DEBFOLDERNAME="$DEBFOLDER-$DEBVERSION"
+mkdir "../$DEBFOLDERNAME" && cp -R $SOURCEBINPATH "../$DEBFOLDERNAME" cd "../$DEBFOLDERNAME" || exit 1
+exit 0
